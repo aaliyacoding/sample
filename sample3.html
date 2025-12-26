@@ -1,0 +1,2544 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Proof & Response — Islamic Apologetics Platform</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables - New Color Scheme */
+:root {
+    --primary: #5B21B6; /* Deep purple */
+    --primary-dark: #4C1D95;
+    --secondary: #D6A24B; /* Gold from original */
+    --secondary-light: #E8C483;
+    --accent: #0D9488; /* Teal accent */
+    --accent-light: #14B8A6;
+    --dark: #1E1B4B;
+    --light: #FAF5FF;
+    --white: #FFFFFF;
+    --gray: #6D7280;
+    --gray-light: #F5F3FF;
+    --gray-border: #DDD6FE;
+    --success: #059669;
+    --error: #DC2626;
+    --warning: #D97706;
+
+
+            
+            --max-width: 1200px;
+            --border-radius: 16px;
+            --border-radius-sm: 10px;
+            --border-radius-lg: 24px;
+            
+            --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-md: 0 6px 15px -1px rgba(0, 0, 0, 0.08);
+            --shadow-lg: 0 10px 25px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 40px -5px rgba(0, 0, 0, 0.1);
+            
+            --font-heading: 'Poppins', 'Inter', sans-serif;
+            --font-body: 'Inter', system-ui, sans-serif;
+            --font-arabic: 'Amiri', serif;
+        }
+
+        /* Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--dark);
+            background-color: var(--light);
+            line-height: 1.6;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: var(--gray-light);
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: var(--primary);
+            border-radius: 4px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: var(--primary-dark);
+        }
+
+        /* Container */
+        .container {
+            width: 100%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInDown {
+            from { opacity: 0; transform: translateY(-40px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes fadeInLeft {
+            from { opacity: 0; transform: translateX(-40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes fadeInRight {
+            from { opacity: 0; transform: translateX(40px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+
+        @keyframes scaleIn {
+            from { transform: scale(0.9); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @keyframes shimmer {
+            0% { background-position: -1000px 0; }
+            100% { background-position: 1000px 0; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateX(100%); }
+            to { transform: translateX(0); }
+        }
+
+        @keyframes ripple {
+            0% { transform: scale(0); opacity: 1; }
+            100% { transform: scale(4); opacity: 0; }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            background-color: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow);
+            padding: 15px 0;
+            transition: all 0.3s ease;
+        }
+
+        header.scrolled {
+            padding: 10px 0;
+            box-shadow: var(--shadow-md);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            font-size: 18px;
+            box-shadow: var(--shadow-lg);
+            animation: float 3s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .logo-icon::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shimmer 2s infinite linear;
+        }
+
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .logo-title {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-size: 18px;
+            color: var(--primary);
+            line-height: 1.2;
+        }
+
+        .logo-subtitle {
+            font-size: 11px;
+            color: var(--gray);
+            margin-top: 2px;
+        }
+
+        /* Mobile Menu Toggle */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: var(--border-radius-sm);
+            background-color: var(--gray-light);
+            color: var(--primary);
+            font-size: 20px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .menu-toggle:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        /* Navigation */
+        .nav-links {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .nav-links a {
+            text-decoration: none;
+            color: var(--dark);
+            font-weight: 500;
+            font-size: 15px;
+            padding: 8px 12px;
+            border-radius: var(--border-radius-sm);
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .nav-links a:hover {
+            color: var(--primary);
+            background-color: rgba(15, 81, 50, 0.05);
+        }
+
+        .nav-links a.active {
+            color: var(--primary);
+            background-color: rgba(15, 81, 50, 0.1);
+        }
+
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary);
+            transition: all 0.3s ease;
+            transform: translateX(-50%);
+        }
+
+        .nav-links a:hover::after {
+            width: 80%;
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .cta-button {
+            padding: 10px 20px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 14px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            box-shadow: var(--shadow);
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .owner-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: var(--gray-light);
+            border: none;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .owner-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: scale(1.1);
+        }
+
+        .owner-btn.authenticated {
+            background-color: rgba(15, 81, 50, 0.1);
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .owner-btn.authenticated::after {
+            content: '';
+            position: absolute;
+            top: -2px;
+            right: -2px;
+            width: 10px;
+            height: 10px;
+            background-color: var(--success);
+            border-radius: 50%;
+            border: 2px solid white;
+        }
+
+        /* Hero Section */
+        .hero-section {
+            padding: 150px 0 80px;
+            background: linear-gradient(135deg, rgba(15, 81, 50, 0.05) 0%, rgba(214, 162, 75, 0.05) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(15, 81, 50, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(214, 162, 75, 0.03) 0%, transparent 50%);
+            z-index: 0;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        .hero-content {
+            animation: fadeInLeft 0.8s ease-out;
+        }
+
+        .hero-title {
+            font-family: var(--font-heading);
+            font-size: 3.2rem;
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--primary);
+            margin-bottom: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 100px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .hero-description {
+            font-size: 1.1rem;
+            color: var(--gray);
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            border: none;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            box-shadow: var(--shadow);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+
+        .btn-secondary:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+
+        .btn-icon {
+            font-size: 18px;
+        }
+
+        /* Interactive Question Card */
+        .question-card-container {
+            animation: fadeInRight 0.8s ease-out 0.2s both;
+            perspective: 1000px;
+        }
+
+        .question-card {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--shadow-xl);
+            overflow: hidden;
+            border: 1px solid var(--gray-border);
+            transform-style: preserve-3d;
+            transition: transform 0.6s ease;
+            height: 500px;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .question-card:hover {
+            transform: rotateY(5deg) rotateX(5deg);
+        }
+
+        .question-card-header {
+            background: linear-gradient(135deg, var(--primary), var(--accent));
+            color: white;
+            padding: 25px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .question-card-header::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+            animation: shimmer 3s infinite linear;
+        }
+
+        .question-card-icon {
+            font-size: 28px;
+            filter: drop-shadow(0 2px 4px rgba(0,0,0,0.2));
+            z-index: 1;
+        }
+
+        .question-card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            z-index: 1;
+        }
+
+        .question-card-content {
+            padding: 25px;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .question-intro {
+            color: var(--gray);
+            text-align: center;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .question-form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            flex: 1;
+        }
+
+        .form-group {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-label {
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--dark);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .form-label::before {
+            content: '•';
+            color: var(--secondary);
+            font-size: 1.2rem;
+        }
+
+        .question-textarea {
+            flex: 1;
+            padding: 18px;
+            border: 2px solid var(--gray-border);
+            border-radius: var(--border-radius);
+            font-family: var(--font-body);
+            font-size: 15px;
+            resize: none;
+            transition: all 0.3s ease;
+            background-color: var(--gray-light);
+        }
+
+        .question-textarea:focus {
+            outline: none;
+            border-color: var(--secondary);
+            background-color: white;
+            box-shadow: 0 0 0 4px rgba(214, 162, 75, 0.2);
+        }
+
+        .question-submit {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border: none;
+            padding: 16px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            font-size: 16px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            margin-top: auto;
+        }
+
+        .question-submit:hover:not(:disabled) {
+            transform: translateY(-3px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .question-submit:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        .question-submit-loading .btn-spinner {
+            display: inline-block;
+        }
+
+        .btn-spinner {
+            display: none;
+            width: 16px;
+            height: 16px;
+            border: 2px solid rgba(255,255,255,0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s linear infinite;
+        }
+
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        .success-message {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 40px;
+            text-align: center;
+            animation: scaleIn 0.5s ease;
+            z-index: 10;
+        }
+
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, var(--success), #34D399);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: white;
+            margin-bottom: 20px;
+            animation: pulse 2s infinite;
+        }
+
+        .success-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 10px;
+        }
+
+        .success-text {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        .question-note {
+            font-size: 0.85rem;
+            color: var(--gray);
+            text-align: center;
+            margin-top: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+
+        /* Topics Grid */
+        .section {
+            padding: 80px 0;
+            position: relative;
+        }
+
+        .section-title {
+            font-family: var(--font-heading);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 2px;
+        }
+
+        .topics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+        }
+
+        .topic-card {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow);
+            padding: 30px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .topic-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s ease;
+        }
+
+        .topic-card:hover {
+            transform: translateY(-10px);
+            box-shadow: var(--shadow-xl);
+            border-color: var(--gray-border);
+        }
+
+        .topic-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .topic-card-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, rgba(15, 81, 50, 0.1), rgba(214, 162, 75, 0.1));
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: var(--primary);
+            margin-bottom: 20px;
+        }
+
+        .topic-card-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: var(--primary);
+            margin-bottom: 15px;
+            line-height: 1.4;
+        }
+
+        .topic-card-description {
+            color: var(--gray);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .topic-card-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 20px;
+            background-color: rgba(15, 81, 50, 0.1);
+            color: var(--primary);
+            border-radius: var(--border-radius-sm);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        .topic-card-btn:hover {
+            background-color: var(--primary);
+            color: white;
+            transform: translateX(5px);
+        }
+
+        /* FAQ Section */
+        .faq-section {
+            background: linear-gradient(135deg, rgba(15, 81, 50, 0.03) 0%, rgba(214, 162, 75, 0.03) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .faq-section::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(15, 81, 50, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .faq-section::after {
+            content: '';
+            position: absolute;
+            bottom: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(214, 162, 75, 0.05) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .faq-container {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        .faq-item {
+            background: white;
+            border-radius: var(--border-radius);
+            margin-bottom: 20px;
+            box-shadow: var(--shadow);
+            overflow: hidden;
+            border: 1px solid var(--gray-border);
+            transition: all 0.3s ease;
+        }
+
+        .faq-item:hover {
+            box-shadow: var(--shadow-lg);
+        }
+
+        .faq-question {
+            padding: 25px 30px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--primary);
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            background-color: rgba(15, 81, 50, 0.02);
+        }
+
+        .faq-icon {
+            transition: transform 0.4s ease;
+            font-size: 14px;
+            color: var(--secondary);
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+
+        .faq-answer {
+            padding: 0 30px;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.5s ease;
+            color: var(--gray);
+            line-height: 1.7;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 0 30px 30px;
+            max-height: 2000px;
+        }
+
+        .quran-verse {
+            font-family: var(--font-arabic);
+            font-style: italic;
+            background: linear-gradient(135deg, rgba(214, 162, 75, 0.05), rgba(15, 81, 50, 0.05));
+            padding: 20px;
+            border-radius: var(--border-radius-sm);
+            margin: 20px 0;
+            border-right: 4px solid var(--secondary);
+            color: var(--dark);
+            line-height: 1.8;
+            position: relative;
+        }
+
+        .quran-verse::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            font-size: 60px;
+            color: rgba(214, 162, 75, 0.2);
+            font-family: serif;
+        }
+
+        .pbuh {
+            font-family: var(--font-arabic);
+            font-size: 0.9em;
+            vertical-align: super;
+            color: var(--primary);
+        }
+
+        /* Floating Action Button */
+        .fab {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: var(--shadow-lg);
+            cursor: pointer;
+            z-index: 999;
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .fab:hover {
+            transform: scale(1.1) rotate(90deg);
+            box-shadow: var(--shadow-xl);
+        }
+
+        /* Footer */
+        footer {
+            background: var(--primary);
+            color: white;
+            padding: 60px 0 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+        }
+
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 40px;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+
+        .footer-logo {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .footer-logo-text {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .footer-logo-subtext {
+            font-size: 14px;
+            opacity: 0.8;
+            max-width: 300px;
+        }
+
+        .footer-copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: 14px;
+            opacity: 0.8;
+            width: 100%;
+        }
+
+        /* Modal */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.8);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .modal.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--border-radius-lg);
+            width: 90%;
+            max-width: 400px;
+            padding: 40px;
+            box-shadow: var(--shadow-xl);
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            position: relative;
+        }
+
+        .modal.active .modal-content {
+            transform: scale(1);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: none;
+            border: none;
+            font-size: 24px;
+            color: var(--gray);
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .modal-close:hover {
+            color: var(--primary);
+        }
+
+        .modal-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .modal-input {
+            width: 100%;
+            padding: 15px;
+            border: 2px solid var(--gray-border);
+            border-radius: var(--border-radius);
+            font-size: 16px;
+            text-align: center;
+            letter-spacing: 3px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            margin-bottom: 20px;
+        }
+
+        .modal-input:focus {
+            outline: none;
+            border-color: var(--secondary);
+            box-shadow: 0 0 0 3px rgba(214, 162, 75, 0.2);
+        }
+
+        .modal-error {
+            color: var(--error);
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 14px;
+            display: none;
+        }
+
+        .modal-actions {
+            display: flex;
+            gap: 15px;
+        }
+
+        .modal-btn {
+            flex: 1;
+            padding: 15px;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+
+        .modal-btn-primary {
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            color: white;
+        }
+
+        .modal-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+
+        .modal-btn-secondary {
+            background-color: var(--gray-light);
+            color: var(--dark);
+        }
+
+        .modal-btn-secondary:hover {
+            background-color: var(--gray-border);
+        }
+
+        /* Toast Notification */
+        .toast {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 20px 25px;
+            border-radius: var(--border-radius);
+            box-shadow: var(--shadow-xl);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            z-index: 3000;
+            transform: translateX(150%);
+            transition: transform 0.5s ease;
+            max-width: 400px;
+        }
+
+        .toast.show {
+            transform: translateX(0);
+        }
+
+        .toast-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+            flex-shrink: 0;
+        }
+
+        .toast-success .toast-icon {
+            background-color: rgba(16, 185, 129, 0.1);
+            color: var(--success);
+        }
+
+        .toast-error .toast-icon {
+            background-color: rgba(239, 68, 68, 0.1);
+            color: var(--error);
+        }
+
+        .toast-content {
+            flex: 1;
+        }
+
+        .toast-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .toast-message {
+            font-size: 14px;
+            color: var(--gray);
+        }
+
+        .toast-close {
+            background: none;
+            border: none;
+            color: var(--gray);
+            cursor: pointer;
+            font-size: 18px;
+            transition: color 0.3s ease;
+        }
+
+        .toast-close:hover {
+            color: var(--dark);
+        }
+
+        /* Loading Screen */
+        .loading-screen {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 9999;
+            transition: opacity 0.5s ease, visibility 0.5s ease;
+        }
+
+        .loading-logo {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: var(--border-radius);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 30px;
+            animation: pulse 1.5s infinite;
+        }
+
+        .loading-text {
+            color: white;
+            font-size: 18px;
+            font-weight: 600;
+            letter-spacing: 2px;
+        }
+
+        .loading-bar {
+            width: 200px;
+            height: 4px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 2px;
+            margin-top: 20px;
+            overflow: hidden;
+        }
+
+        .loading-progress {
+            width: 0;
+            height: 100%;
+            background: white;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        /* Mobile Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-container {
+                gap: 40px;
+            }
+            
+            .hero-title {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .nav-links {
+                position: fixed;
+                top: 80px;
+                left: 0;
+                width: 100%;
+                background: white;
+                flex-direction: column;
+                align-items: stretch;
+                padding: 20px;
+                box-shadow: var(--shadow-lg);
+                transform: translateY(-100%);
+                opacity: 0;
+                visibility: hidden;
+                transition: all 0.3s ease;
+                z-index: 999;
+                border-top: 1px solid var(--gray-border);
+            }
+
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+                visibility: visible;
+            }
+
+            .nav-links a {
+                padding: 15px;
+                border-radius: var(--border-radius-sm);
+            }
+
+            .hero-container {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+                text-align: center;
+            }
+
+            .hero-title::after {
+                left: 50%;
+                transform: translateX(-50%);
+            }
+
+            .hero-description {
+                text-align: center;
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-actions {
+                justify-content: center;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .topics-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .question-card {
+                height: 450px;
+            }
+
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 30px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-section {
+                padding: 130px 0 60px;
+            }
+
+            .section {
+                padding: 60px 0;
+            }
+
+            .question-card-header {
+                padding: 20px;
+            }
+
+            .question-card-content {
+                padding: 20px;
+            }
+
+            .faq-question {
+                padding: 20px;
+                font-size: 1rem;
+            }
+
+            .faq-answer {
+                padding: 0 20px;
+            }
+
+            .faq-item.active .faq-answer {
+                padding: 0 20px 20px;
+            }
+
+            .fab {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+        }
+
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+
+        a:focus, button:focus, input:focus, textarea:focus {
+            outline: 3px solid rgba(214, 162, 75, 0.4);
+            outline-offset: 2px;
+        }
+
+        /* Animation classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div class="loading-screen" id="loadingScreen">
+        <div class="loading-logo">PR</div>
+        <div class="loading-text">Proof & Response</div>
+        <div class="loading-bar">
+            <div class="loading-progress" id="loadingProgress"></div>
+        </div>
+    </div>
+
+    <!-- Toast Notification -->
+    <div class="toast" id="toast">
+        <div class="toast-icon">
+            <i class="fas fa-check"></i>
+        </div>
+        <div class="toast-content">
+            <div class="toast-title">Success!</div>
+            <div class="toast-message">Your question has been submitted.</div>
+        </div>
+        <button class="toast-close" id="toastClose">
+            <i class="fas fa-times"></i>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header id="header">
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <div class="logo-icon">PR</div>
+                <div class="logo-text">
+                    <div class="logo-title">Proof & Response</div>
+                    <div class="logo-subtitle">Islamic responses to major Christian claims</div>
+                </div>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+
+            <div class="nav-links" id="navLinks">
+                <a href="#key-disagreements" class="nav-link">Key Disagreements</a>
+                <a href="#proving-islam" class="nav-link">Proving Islam</a>
+                <a href="#faq-section" class="nav-link">FAQ</a>
+                <a href="community.html" class="nav-link">Q&A</a>
+            </div>
+
+            <div class="header-actions">
+                <a href="community.html" class="cta-button">
+                    <i class="fas fa-question-circle"></i>
+                    <span>View Questions</span>
+                </a>
+                <button class="owner-btn" id="ownerBtn" title="Owner Authentication">
+                    <i class="fas fa-user-shield"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container hero-container">
+            <div class="hero-content">
+                <h1 class="hero-title">Evidence-Based Islamic Responses to Christian Theology</h1>
+                <p class="hero-description">Clarifying Islamic perspectives through textual analysis, historical evidence, and rational discourse</p>
+                <div class="hero-actions">
+                    <a href="#key-disagreements" class="btn btn-primary">
+                        <i class="fas fa-book-open btn-icon"></i>
+                        Explore Topics
+                    </a>
+                    <a href="community.html" class="btn btn-secondary">
+                        <i class="fas fa-users btn-icon"></i>
+                        View Users Questions
+                    </a>
+                </div>
+            </div>
+
+            <div class="question-card-container">
+                <div class="question-card" id="questionCard">
+                    <div class="question-card-header">
+                        <i class="fas fa-question-circle question-card-icon"></i>
+                        <div class="question-card-title">Submit a Question</div>
+                    </div>
+                    
+                    <div class="question-card-content">
+                        <p class="question-intro">
+                            Ask a question about Islam or Christianity. 
+                            Your question will be publicly answered on our website for everyone's benefit.
+                        </p>
+
+                        <form id="questionForm" class="question-form">
+                            <div class="form-group">
+                                <label for="question" class="form-label">
+                                    <i class="fas fa-edit"></i>
+                                    Your Question *
+                                </label>
+                                <textarea 
+                                    id="question"
+                                    class="question-textarea"
+                                    placeholder="Type your question here (minimum 20 characters)..."
+                                    required
+                                    minlength="20"
+                                ></textarea>
+                                <div class="error-message" id="questionError"></div>
+                            </div>
+
+                            <button type="submit" class="question-submit" id="submitBtn">
+                                <i class="fas fa-paper-plane"></i>
+                                <span>Submit Question Publicly</span>
+                                <div class="btn-spinner"></div>
+                            </button>
+                        </form>
+
+                        <div id="successMessage" class="success-message" style="display: none;">
+                            <div class="success-icon">
+                                <i class="fas fa-check"></i>
+                            </div>
+                            <h3 class="success-title">Question Submitted Successfully!</h3>
+                            <p class="success-text">Your question has been posted to our community Q&A section.</p>
+                            <p class="question-note">
+                                <i class="fas fa-clock"></i> Check back soon for an answer!
+                            </p>
+                        </div>
+
+                        <p class="question-note">
+                            <i class="fas fa-users"></i> All questions and answers are public for community learning.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Key Disagreements Section -->
+    <section class="section" id="key-disagreements">
+        <div class="container">
+            <h2 class="section-title">Key Disagreements Between Islam and Christianity</h2>
+            <div class="topics-grid">
+                <!-- Cards will be generated dynamically with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Proving Islam Section -->
+    <section class="section" id="proving-islam">
+        <div class="container">
+            <h2 class="section-title">Proving Islam: Evidence & Responses</h2>
+            <div class="topics-grid">
+                <!-- Cards will be generated dynamically with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="section faq-section" id="faq-section">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="faq-container">
+                <!-- FAQ items will be generated dynamically with JavaScript -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <div class="footer-logo-text">Proof & Response</div>
+                    <div class="footer-logo-subtext">Methodology: primary texts, textual criticism, historical sources.</div>
+                </div>
+                <div>
+                    <small>© 2024 Islamic Apologetics Platform. All rights reserved.</small>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <small>Designed with <i class="fas fa-heart" style="color: #ff6b6b;"></i> for mobile-first experience</small>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fab" id="fab">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <!-- Owner Authentication Modal -->
+    <div class="modal" id="ownerModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <h3 class="modal-title">
+                <i class="fas fa-lock"></i> Owner Authentication
+            </h3>
+            <div class="modal-input-group">
+                <input 
+                    type="password" 
+                    id="ownerCodeInput" 
+                    class="modal-input"
+                    placeholder="Enter 10-digit code"
+                    maxlength="10"
+                />
+                <div class="modal-error" id="modalError"></div>
+            </div>
+            <div class="modal-actions">
+                <button class="modal-btn modal-btn-primary" id="modalAuthenticate">
+                    Authenticate
+                </button>
+                <button class="modal-btn modal-btn-secondary" id="modalCancel">
+                    Cancel
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ripple Effect Element -->
+    <div id="ripple"></div>
+
+    <script>
+        // ============================================
+        // DATA AND CONFIGURATION
+        // ============================================
+        
+        const OWNER_CODE = "7192834650";
+        let isOwnerAuthenticated = localStorage.getItem('ownerAuthenticated') === 'true';
+
+        // Topics data for Key Disagreements section
+        const keyDisagreements = [
+            {
+                title: "Jesus Never Claimed Divinity",
+                description: "Examining Jesus' own statements about his nature and mission versus later Christian doctrines",
+                link: "jesus-divinity.html",
+                icon: "fas fa-cross"
+            },
+            {
+                title: "Evolution of Trinity Doctrine",
+                description: "How the concept of Trinity developed over centuries through church councils",
+                link: "trinity-evolution.html",
+                icon: "fas fa-church"
+            },
+            {
+                title: "Biblical Textual Integrity",
+                description: "Anonymous authorship and textual variations in the New Testament",
+                link: "biblical-integrity.html",
+                icon: "fas fa-book"
+            },
+            {
+                title: "Paul: Apostle or Apostate?",
+                description: "Evaluating Paul's teachings versus Jesus' original message",
+                link: "paul-apostate.html",
+                icon: "fas fa-user"
+            },
+            {
+                title: "Pagan Origins of Christianity",
+                description: "Pagan influences on Christian doctrines versus pure monotheism",
+                link: "pagan-origins.html",
+                icon: "fas fa-star-and-crescent"
+            },
+            {
+                title: "Jesus' Teachings vs Christianity",
+                description: "How Jesus' original message contradicts modern Christian doctrines",
+                link: "jesus-vs-christianity.html",
+                icon: "fas fa-balance-scale"
+            },
+            {
+                title: "Original Sin & Atonement",
+                description: "Islamic rejection of inherited sin versus Christian doctrine of atonement",
+                link: "original-sin.html",
+                icon: "fas fa-shield-alt"
+            },
+            {
+                title: "Crucifixion Narrative",
+                description: "Is Crucifixion really historically accurate?",
+                link: "crucifixion.html",
+                icon: "fas fa-times"
+            },
+            {
+                title: "Salvation Concept",
+                description: "Faith versus works in Islamic and Christian theology",
+                link: "salvation.html",
+                icon: "fas fa-hands-praying"
+            }
+        ];
+
+        // Topics data for Proving Islam section
+        const provingIslam = [
+            {
+                title: "Refuting Islamic Dilemma",
+                description: "Addressing common misconceptions and objections about Islam",
+                link: "refuting-dilemma.html",
+                icon: "fas fa-comments"
+            },
+            {
+                title: "The Age of Aisha",
+                description: "Historical context and scholarly perspectives",
+                link: "age-of-aisha.html",
+                icon: "fas fa-history"
+            },
+            {
+                title: "Claims Against Prophet Muhammad <span class='pbuh'>ﷺ</span>",
+                description: "Responding to criticisms of Prophet Muhammad's character",
+                link: "prophet-claims.html",
+                icon: "fas fa-user-shield"
+            },
+            {
+                title: "Prophethood Evidence",
+                description: "Evidence for Muhammad's prophethood and responses to objections",
+                link: "prophethood.html",
+                icon: "fas fa-mosque"
+            },
+            {
+                title: "Muhammad <span class='pbuh'>ﷺ</span> in the Bible",
+                description: "Biblical prophecies pointing to Prophet Muhammad",
+                link: "muhammad-in-bible.html",
+                icon: "fas fa-bible"
+            },
+            {
+                title: "Scientific Miracles",
+                description: "Scientific facts in the Quran unknown at the time",
+                link: "scientific-miracles.html",
+                icon: "fas fa-atom"
+            },
+            {
+                title: "Quran Preservation",
+                description: "Evidence for perfect preservation of the Quranic text",
+                link: "quran-preservation.html",
+                icon: "fas fa-quran"
+            },
+            {
+                title: "Islamic View of Prophets",
+                description: "Understanding the role and status of prophets in Islam",
+                link: "islamic-prophets.html",
+                icon: "fas fa-user-tie"
+            },
+            {
+                title: "Sharia & Governance",
+                description: "Clarifying Islamic law and historical development",
+                link: "sharia-governance.html",
+                icon: "fas fa-scale-balanced"
+            }
+        ];
+
+        // FAQ data
+        const faqData = [
+            {
+                question: "What are the Taurah and the Injil in the Quran?",
+                answer: `
+                    <p>In the Quran, the <strong>Taurah (Torah)</strong> and the <strong>Injil (Gospel)</strong> are described as original revelations from Allah, sent to <strong>Moses</strong> and <strong>Jesus</strong> as direct words of divine guidance.</p>
+                    <div class="quran-verse">"Indeed, We sent down the Taurah, in which was guidance and light..." (Quran 5:44)</div>
+                    <div class="quran-verse">"And We gave Jesus, the son of Mary, the Injil, in which was guidance and light..." (Quran 5:46)</div>
+                    <p>However, the Quran also teaches that these scriptures were not preserved in their pure form. Over generations, some people <em>"distorted the words with their tongues"</em> (Quran 3:78) and <em>"wrote the Book with their own hands and said, 'This is from Allah'"</em> (Quran 2:79). This shows both verbal and written distortion — where divine revelation was mixed with human changes and interpretations.</p>
+                    <p>Even in Jewish tradition, the Torah exists as both the Written and Oral law, and the Quran's description reflects how interpretation and transmission altered the message. Similarly, the Injil given to Jesus was a single divine revelation, not the four later Gospels written decades after him. The existing Gospels may preserve traces of that message, but they are not the original Injil mentioned in the Quran.</p>
+                    <p>When the Quran says, <em>"No one can change the words of Allah"</em> (Quran 6:115), it refers to Allah's eternal and perfect truth — not to the physical copies of scripture that humans later altered. The true Word of Allah remains preserved with Him, while human handling led to changes in the earthly versions.</p>
+                    <p>Thus, Islam teaches that the Taurah and Injil were true revelations, but their original forms were lost or changed. The Quran was revealed as the final, preserved message — confirming the truth that remains and correcting what was distorted.</p>
+                    <div class="quran-verse">"And We have revealed to you the Book in truth, confirming what was before it of the Scripture and as a criterion over it." (Quran 5:48)</div>
+                `
+            },
+            {
+                question: "Is Allah same as the Hebrew God Elohim?",
+                answer: `
+                    <p>The Qur'an uses the name Allah because that is the word for the one true God in Arabic. Just like the Hebrew Bible uses Elohim, and Jesus in Aramaic used Alaha. These are different languages referring to the same Creator, not different gods.</p>
+                    <div class="quran-verse">"Innānī ana Allāh — I am Allah." (Quran 20:14)</div>
+                    <p>So the Bible says "I am Elohim," and the Qur'an says "I am Allah." Different languages, same meaning: the one God speaking His identity.</p>
+                    <p>Also, the word "Allah" is actually used in the Arabic Torah and Arabic Gospels, where Arab Christians have always called God "Allah" long before Islam existed.</p>
+                    <p>Arabic uses two forms:</p>
+                    <ul>
+                        <li><em>ilah</em> = a god (can refer to false deities)</li>
+                        <li><em>Allah</em> = the God (the one true Creator)</li>
+                    </ul>
+                    <p>You can say: "Zeus was an ilah for the Greeks," but you cannot call him Allah because Allah is used only for the true God.</p>
+                    <p>Jesus spoke Aramaic, and the word for God in his language is Alaha. What Jesus meant is:</p>
+                    <div class="quran-verse">"For I have come down from Alaha, not to do my will but the will of Him who sent me." (John 6:38)</div>
+                    <p>This shows that Jesus used the same Semitic word-family for God that the Qur'an uses: Elah → Alaha → Allah.</p>
+                    <p>Different languages, one meaning: the one eternal Creator.</p>
+                `
+            },
+            {
+                question: "Is everyone going to hell according to Islam?",
+                answer: `
+                    <p>Islam does not teach that everyone is going to Hell. The message of Islam is that Allah is perfectly just and perfectly merciful. A person is only held accountable for what they truly knew, understood, and deliberately rejected.</p>
+                    <p>Those who receive the message of Islam clearly, know it is true, and then consciously reject and mock it are accountable for that rejection. But those who never heard the message, or heard a distorted version of it, are not automatically punished. Allah will judge them with complete justice.</p>
+                    <div class="quran-verse">"We never punish a people until We have sent a messenger." (Quran 17:15)</div>
+                    <p>This means a person is not punished for something they never had access to or never understood.</p>
+                    <p>The Prophet ﷺ also explained that those who never heard the message, or who lived in times or places where the message didn't reach them correctly, will be tested by Allah on the Day of Judgment in a way perfectly suited to His justice and mercy.</p>
+                    <p>"Four types of people will present excuses on the Day of Resurrection… the one who lived in between the prophets (and did not hear the message)... Allah will test them, and whoever obeys will enter Paradise." (Hadith reported by Ahmad, authenticated by Ibn Taymiyyah, Ibn al-Qayyim, al-Albani)</p>
+                    <p>The Prophet ﷺ also taught that Allah does not punish anyone for something they did not know was wrong:</p>
+                    <p>"If I command you to do something, do as much of it as you can; and if I forbid you from something, then avoid it." (Sahih al-Bukhari)</p>
+                    <p>A person is responsible only for what they knowingly choose. No one carries the sin of someone else.</p>
+                    <div class="quran-verse">"No soul shall bear the burden of another." (Quran 6:164)</div>
+                    <p>This principle is one of the clearest statements of divine justice in the Qur'an. Islam does not condemn all people to Hell. Rather, Allah judges each individual according to knowledge, intention, sincerity, and opportunity.</p>
+                    <p>Those who never heard the message correctly will not be judged the same as those who heard it clearly and knowingly rejected it. Allah's justice ensures that every person is treated fairly, and His mercy ensures that no one is wronged.</p>
+                `
+            },
+            {
+                question: "Do Muslims believe in original sin?",
+                answer: `
+                    <p>The concept of original sin was introduced by Paul, who was a self-appointed apostle. He brought the idea that every human inherits sin from Adam and Eve, even though Jesus himself taught people to ask directly for forgiveness.</p>
+                    <p>"For if you forgive others their trespasses, your heavenly Father will also forgive you. But if you do not forgive others their trespasses, neither will your Father forgive your trespasses." (Matthew 6:14–15)</p>
+                    <p>This clearly shows that forgiveness comes from seeking God's mercy, not through inherited guilt.</p>
+                    <p>In Islam, the story of Adam and Eve is very different. Both of them asked Allah for forgiveness after their mistake, and Allah, being Most Merciful, forgave them. There is no concept of inherited sin in Islam. Every human being is born pure and is responsible only for his or her own actions.</p>
+                    <p>Muslims also believe in salvation, but salvation in Islam comes through faith in Allah, doing good deeds, believing in His prophets, and the Last Day.</p>
+                    <div class="quran-verse">"Indeed, those who have believed and done righteous deeds will have gardens beneath which rivers flow. That is the great attainment." (Quran 85:11)</div>
+                    <p>This verse shows that salvation depends on belief and righteous action, not on someone else's sacrifice or sin.</p>
+                    <div class="quran-verse">"No soul shall bear the burden of another." (Quran 6:164)</div>
+                    <p>This means that everyone is judged for their own actions, and those who sincerely repent and do good will be forgiven by Allah. If a person does wrong and never seeks forgiveness, they may face punishment for a time, but believers will ultimately enter Paradise by Allah's mercy.</p>
+                    <p>This understanding of sin and salvation makes logical sense — every person is responsible for what they do, and everyone has the chance to seek forgiveness and earn Allah's mercy.</p>
+                `
+            },
+            {
+                question: "What does it mean that Jesus is called 'Word of God' and 'Spirit from God' in the Quran?",
+                answer: `
+                    <p>Some Christians interpret the Quran as referring to Jesus as the "Word of God" and a "Spirit from Him." However, the actual verse in the Quran states:</p>
+                    <div class="quran-verse">"O People of the Book, do not go to extremes in your religion or say about Allah except the truth. The Messiah, Jesus, son of Mary, was no more than a messenger of Allah and the fulfillment of His Word through Mary and a spirit from Him. So believe in Allah and His messengers and do not say, 'Trinity.' Stop!—for your own good. Indeed, Allah is the only One God. Glory be to Him! He is far above having a son. To Him belongs whatever is in the heavens and whatever is on the earth." (Quran 4:171)</div>
+                    <p>Applying the Christian interpretation literally by replacing "Word of God" and "Spirit from Him" with "Jesus" makes the verse read:</p>
+                    <div class="quran-verse">"O People of the Book, do not go to extremes in your religion or say about Allah except the truth. The Messiah, Jesus, son of Mary, was no more than a messenger of Allah and the fulfillment of Jesus through Mary and a Jesus by command from Him... "</div>
+                    <p>This clearly shows that the Christian logic leads to an absurd conclusion. The Quran further clarifies the creation of Jesus:</p>
+                    <div class="quran-verse">"Indeed, the example of Jesus to Allah is like that of Adam. He created him from dust; then He said to him, 'Be,' and he was." (Quran 3:59)</div>
+                    <p>This analogy underscores that Jesus was created by Allah's command, similar to Adam, without implying divinity.</p>
+                    <p>Additionally, the phrase "Spirit from Him" is interpreted as the Archangel Gabriel (Rūḥ al-Qudus), who transmitted the spirit to Mary to facilitate the miraculous birth of Jesus. Gabriel is mentioned by several names in the Quran, and one of his titles is Holy Spirit, but this does not imply that the spirit itself is divine, nor does it make Jesus divine.</p>
+                `
+            },
+            {
+                question: "Chose one: Jesus or Muhammad",
+                answer: `
+                    <p>No, Muslims believe in and respect all prophets, including Jesus and Muhammad. The Quran commands Muslims to believe in all prophets without distinction.</p>
+                    <div class="quran-verse">"The Messenger has believed in what was revealed to him from his Lord, and so have the believers. All of them have believed in Allah and His angels and His books and His messengers, saying, 'We make no distinction between any of His messengers.' And they say, 'We hear and we obey. We seek Your forgiveness, our Lord, and to You is the destination.'" (Quran 2:285)</div>
+                    <div class="quran-verse">"Say, [O believers], 'We have believed in Allah and what has been revealed to us and what has been revealed to Abraham, Ishmael, Isaac, Jacob, and the Descendants [al-Asbat], and what was given to Moses and Jesus and what was given to the prophets from their Lord. We make no distinction between any of them, and we are Muslims [in submission] to Him.'" (Quran 3:84)</div>
+                `
+            }
+        ];
+
+        // ============================================
+        // UTILITY FUNCTIONS
+        // ============================================
+
+        // Show toast notification
+        function showToast(type, title, message, duration = 5000) {
+            const toast = document.getElementById('toast');
+            const toastIcon = toast.querySelector('.toast-icon i');
+            const toastTitle = toast.querySelector('.toast-title');
+            const toastMessage = toast.querySelector('.toast-message');
+            
+            // Set toast type and content
+            toast.className = `toast toast-${type}`;
+            toastIcon.className = type === 'success' ? 'fas fa-check' : 'fas fa-exclamation-circle';
+            toastTitle.textContent = title;
+            toastMessage.textContent = message;
+            
+            // Show toast
+            toast.classList.add('show');
+            
+            // Auto hide after duration
+            setTimeout(() => {
+                toast.classList.remove('show');
+            }, duration);
+        }
+
+        // Create ripple effect
+        function createRipple(event) {
+            const ripple = document.getElementById('ripple');
+            if (!ripple) return;
+            
+            const rect = event.currentTarget.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            const x = event.clientX - rect.left - size / 2;
+            const y = event.clientY - rect.top - size / 2;
+            
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = x + 'px';
+            ripple.style.top = y + 'px';
+            ripple.style.animation = 'ripple 0.6s linear';
+            
+            setTimeout(() => {
+                ripple.style.animation = '';
+            }, 600);
+        }
+
+        // Add ripple effect to buttons
+        function addRippleEffect() {
+            const buttons = document.querySelectorAll('button, .btn, .cta-button, .topic-card, .faq-question');
+            buttons.forEach(button => {
+                button.addEventListener('click', createRipple);
+            });
+        }
+
+        // ============================================
+        // INITIALIZATION
+        // ============================================
+
+        // Initialize loading screen
+        function initLoadingScreen() {
+            const loadingScreen = document.getElementById('loadingScreen');
+            const loadingProgress = document.getElementById('loadingProgress');
+            
+            // Simulate loading progress
+            let progress = 0;
+            const interval = setInterval(() => {
+                progress += Math.random() * 20;
+                if (progress > 100) {
+                    progress = 100;
+                    clearInterval(interval);
+                    
+                    // Hide loading screen after delay
+                    setTimeout(() => {
+                        loadingScreen.style.opacity = '0';
+                        loadingScreen.style.visibility = 'hidden';
+                        
+                        // Initialize components after loading
+                        setTimeout(() => {
+                            initComponents();
+                        }, 300);
+                    }, 500);
+                }
+                loadingProgress.style.width = `${progress}%`;
+            }, 100);
+        }
+
+        // Initialize all components
+        function initComponents() {
+            // Add ripple effect
+            addRippleEffect();
+            
+            // Initialize mobile menu
+            initMobileMenu();
+            
+            // Initialize scroll effects
+            initScrollEffects();
+            
+            // Initialize topic cards
+            initTopicCards();
+            
+            // Initialize FAQ accordion
+            initFAQ();
+            
+            // Initialize form submission
+            initForm();
+            
+            // Initialize owner authentication
+            initOwnerAuth();
+            
+            // Initialize floating action button
+            initFAB();
+            
+            // Initialize animations on scroll
+            initScrollAnimations();
+            
+            // Update owner button state
+            updateOwnerButton();
+            
+            // Show welcome message
+            setTimeout(() => {
+                showToast('success', 'Welcome!', 'Explore evidence-based Islamic responses', 3000);
+            }, 1000);
+        }
+
+        // ============================================
+        // COMPONENT INITIALIZATION FUNCTIONS
+        // ============================================
+
+        // Initialize mobile menu
+        function initMobileMenu() {
+            const menuToggle = document.getElementById('menuToggle');
+            const navLinks = document.getElementById('navLinks');
+            
+            if (menuToggle && navLinks) {
+                menuToggle.addEventListener('click', () => {
+                    navLinks.classList.toggle('active');
+                    menuToggle.innerHTML = navLinks.classList.contains('active') 
+                        ? '<i class="fas fa-times"></i>'
+                        : '<i class="fas fa-bars"></i>';
+                });
+                
+                // Close menu when clicking outside
+                document.addEventListener('click', (event) => {
+                    if (!menuToggle.contains(event.target) && !navLinks.contains(event.target)) {
+                        navLinks.classList.remove('active');
+                        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    }
+                });
+                
+                // Close menu when clicking a link
+                navLinks.querySelectorAll('.nav-link').forEach(link => {
+                    link.addEventListener('click', () => {
+                        navLinks.classList.remove('active');
+                        menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                    });
+                });
+            }
+        }
+
+        // Initialize scroll effects
+        function initScrollEffects() {
+            const header = document.getElementById('header');
+            
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        // Initialize topic cards
+        function initTopicCards() {
+            // Key Disagreements section
+            const keyDisagreementsGrid = document.querySelector('#key-disagreements .topics-grid');
+            if (keyDisagreementsGrid) {
+                keyDisagreements.forEach(topic => {
+                    const card = createTopicCard(topic);
+                    keyDisagreementsGrid.appendChild(card);
+                });
+            }
+            
+            // Proving Islam section
+            const provingIslamGrid = document.querySelector('#proving-islam .topics-grid');
+            if (provingIslamGrid) {
+                provingIslam.forEach(topic => {
+                    const card = createTopicCard(topic);
+                    provingIslamGrid.appendChild(card);
+                });
+            }
+        }
+
+        // Create a topic card element
+        function createTopicCard(topic) {
+            const card = document.createElement('div');
+            card.className = 'topic-card animate-on-scroll';
+            card.innerHTML = `
+                <div class="topic-card-icon">
+                    <i class="${topic.icon}"></i>
+                </div>
+                <h3 class="topic-card-title">${topic.title}</h3>
+                <p class="topic-card-description">${topic.description}</p>
+                <a href="${topic.link}" class="topic-card-btn">
+                    Read Analysis
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            `;
+            
+            // Add hover effect
+            card.addEventListener('mouseenter', () => {
+                card.style.transform = 'translateY(-10px)';
+            });
+            
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = 'translateY(0)';
+            });
+            
+            return card;
+        }
+
+        // Initialize FAQ accordion
+        function initFAQ() {
+            const faqContainer = document.querySelector('.faq-container');
+            if (!faqContainer) return;
+            
+            faqData.forEach((faq, index) => {
+                const faqItem = document.createElement('div');
+                faqItem.className = 'faq-item animate-on-scroll';
+                faqItem.innerHTML = `
+                    <div class="faq-question">
+                        <span>${faq.question}</span>
+                        <i class="fas fa-chevron-down faq-icon"></i>
+                    </div>
+                    <div class="faq-answer">
+                        ${faq.answer}
+                    </div>
+                `;
+                
+                // Add click event to toggle FAQ
+                const faqQuestion = faqItem.querySelector('.faq-question');
+                faqQuestion.addEventListener('click', () => {
+                    // Close all other FAQs
+                    document.querySelectorAll('.faq-item').forEach(item => {
+                        if (item !== faqItem) {
+                            item.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current FAQ
+                    faqItem.classList.toggle('active');
+                });
+                
+                faqContainer.appendChild(faqItem);
+            });
+        }
+
+        // Initialize form submission
+        function initForm() {
+            const questionForm = document.getElementById('questionForm');
+            const questionInput = document.getElementById('question');
+            const submitBtn = document.getElementById('submitBtn');
+            const successMessage = document.getElementById('successMessage');
+            
+            if (!questionForm) return;
+            
+            questionForm.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                
+                // Validate question
+                const question = questionInput.value.trim();
+                if (question.length < 20) {
+                    showToast('error', 'Validation Error', 'Question must be at least 20 characters');
+                    questionInput.focus();
+                    return;
+                }
+                
+                // Show loading state
+                submitBtn.classList.add('question-submit-loading');
+                submitBtn.disabled = true;
+                
+                // Simulate API call
+                setTimeout(() => {
+                    // Save question to localStorage
+                    const questions = JSON.parse(localStorage.getItem('communityQuestions')) || [];
+                    const newQuestion = {
+                        id: Date.now(),
+                        name: "User",
+                        question: question,
+                        date: new Date().toLocaleDateString('en-US', { 
+                            year: 'numeric', 
+                            month: 'short', 
+                            day: 'numeric' 
+                        }),
+                        likes: 0,
+                        answered: false,
+                        answers: [],
+                        userLiked: false,
+                        followUps: []
+                    };
+                    
+                    questions.unshift(newQuestion);
+                    localStorage.setItem('communityQuestions', JSON.stringify(questions));
+                    
+                    // Show success message
+                    questionForm.style.display = 'none';
+                    successMessage.style.display = 'flex';
+                    
+                    // Show success toast
+                    showToast('success', 'Question Submitted!', 'Your question has been posted to the community');
+                    
+                    // Reset form after delay
+                    setTimeout(() => {
+                        questionForm.style.display = 'flex';
+                        successMessage.style.display = 'none';
+                        questionForm.reset();
+                        submitBtn.classList.remove('question-submit-loading');
+                        submitBtn.disabled = false;
+                        
+                        // Redirect to community page
+                        setTimeout(() => {
+                            window.location.href = 'community.html?newQuestion=true&t=' + Date.now();
+                        }, 1000);
+                    }, 3000);
+                }, 1500);
+            });
+        }
+
+        // Initialize owner authentication
+        function initOwnerAuth() {
+            const ownerBtn = document.getElementById('ownerBtn');
+            const ownerModal = document.getElementById('ownerModal');
+            const modalClose = document.getElementById('modalClose');
+            const modalCancel = document.getElementById('modalCancel');
+            const modalAuthenticate = document.getElementById('modalAuthenticate');
+            const ownerCodeInput = document.getElementById('ownerCodeInput');
+            const modalError = document.getElementById('modalError');
+            
+            if (!ownerBtn) return;
+            
+            // Open modal on owner button click
+            ownerBtn.addEventListener('click', () => {
+                if (isOwnerAuthenticated) {
+                    // Logout if already authenticated
+                    if (confirm("You are authenticated as owner. Would you like to log out?")) {
+                        isOwnerAuthenticated = false;
+                        localStorage.removeItem('ownerAuthenticated');
+                        updateOwnerButton();
+                        showToast('success', 'Logged Out', 'Owner authentication removed');
+                    }
+                } else {
+                    // Show authentication modal
+                    ownerModal.classList.add('active');
+                    ownerCodeInput.focus();
+                }
+            });
+            
+            // Close modal
+            modalClose.addEventListener('click', () => {
+                ownerModal.classList.remove('active');
+                ownerCodeInput.value = '';
+                modalError.style.display = 'none';
+            });
+            
+            modalCancel.addEventListener('click', () => {
+                ownerModal.classList.remove('active');
+                ownerCodeInput.value = '';
+                modalError.style.display = 'none';
+            });
+            
+            // Authenticate
+            modalAuthenticate.addEventListener('click', () => {
+                const enteredCode = ownerCodeInput.value.trim();
+                
+                if (enteredCode === OWNER_CODE) {
+                    // Successful authentication
+                    isOwnerAuthenticated = true;
+                    localStorage.setItem('ownerAuthenticated', 'true');
+                    
+                    // Close modal and update UI
+                    ownerModal.classList.remove('active');
+                    ownerCodeInput.value = '';
+                    modalError.style.display = 'none';
+                    
+                    // Update owner button
+                    updateOwnerButton();
+                    
+                    // Show success message
+                    showToast('success', 'Authenticated!', 'You are now logged in as owner');
+                } else {
+                    // Failed authentication
+                    modalError.textContent = 'Invalid owner code. Please try again.';
+                    modalError.style.display = 'block';
+                    ownerCodeInput.value = '';
+                    ownerCodeInput.focus();
+                    
+                    // Shake animation
+                    ownerCodeInput.style.animation = 'shake 0.5s';
+                    setTimeout(() => {
+                        ownerCodeInput.style.animation = '';
+                    }, 500);
+                }
+            });
+            
+            // Allow Enter key to submit
+            ownerCodeInput.addEventListener('keypress', (e) => {
+                if (e.key === 'Enter') {
+                    modalAuthenticate.click();
+                }
+            });
+            
+            // Close modal on outside click
+            ownerModal.addEventListener('click', (e) => {
+                if (e.target === ownerModal) {
+                    ownerModal.classList.remove('active');
+                    ownerCodeInput.value = '';
+                    modalError.style.display = 'none';
+                }
+            });
+        }
+
+        // Update owner button state
+        function updateOwnerButton() {
+            const ownerBtn = document.getElementById('ownerBtn');
+            if (!ownerBtn) return;
+            
+            if (isOwnerAuthenticated) {
+                ownerBtn.classList.add('authenticated');
+                ownerBtn.title = "Owner (Authenticated)";
+                ownerBtn.innerHTML = '<i class="fas fa-user-shield"></i>';
+            } else {
+                ownerBtn.classList.remove('authenticated');
+                ownerBtn.title = "Owner Authentication";
+                ownerBtn.innerHTML = '<i class="fas fa-user-shield"></i>';
+            }
+        }
+
+        // Initialize floating action button
+        function initFAB() {
+            const fab = document.getElementById('fab');
+            
+            if (!fab) return;
+            
+            // Scroll to top when clicked
+            fab.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+            
+            // Show/hide FAB based on scroll position
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    fab.style.opacity = '1';
+                    fab.style.visibility = 'visible';
+                    fab.style.transform = 'scale(1)';
+                } else {
+                    fab.style.opacity = '0';
+                    fab.style.visibility = 'hidden';
+                    fab.style.transform = 'scale(0.5)';
+                }
+            });
+            
+            // Initial state
+            fab.style.opacity = '0';
+            fab.style.visibility = 'hidden';
+            fab.style.transform = 'scale(0.5)';
+        }
+
+        // Initialize scroll animations
+        function initScrollAnimations() {
+            const animatedElements = document.querySelectorAll('.animate-on-scroll');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('animated');
+                        
+                        // Add staggered delay for cards
+                        if (entry.target.classList.contains('topic-card')) {
+                            const index = Array.from(animatedElements).indexOf(entry.target);
+                            entry.target.style.transitionDelay = `${(index % 3) * 0.1}s`;
+                        }
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            });
+            
+            animatedElements.forEach(element => {
+                observer.observe(element);
+            });
+        }
+
+        // ============================================
+        // ENHANCEMENTS AND EXTRA FEATURES
+        // ============================================
+
+        // Add dynamic typing effect to hero title
+        function initTypingEffect() {
+            const heroTitle = document.querySelector('.hero-title');
+            if (!heroTitle) return;
+            
+            const originalText = heroTitle.textContent;
+            heroTitle.textContent = '';
+            
+            let i = 0;
+            const typeWriter = () => {
+                if (i < originalText.length) {
+                    heroTitle.textContent += originalText.charAt(i);
+                    i++;
+                    setTimeout(typeWriter, 30);
+                }
+            };
+            
+            // Start typing after a delay
+            setTimeout(typeWriter, 500);
+        }
+
+        // Add parallax effect to hero section
+        function initParallaxEffect() {
+            const heroSection = document.querySelector('.hero-section');
+            if (!heroSection) return;
+            
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                heroSection.style.transform = `translate3d(0, ${rate}px, 0)`;
+            });
+        }
+
+        // Add confetti effect on form submission
+        function createConfetti() {
+            const colors = ['#0F5132', '#D6A24B', '#2A9D8F', '#E76F51', '#264653'];
+            const confettiCount = 100;
+            
+            for (let i = 0; i < confettiCount; i++) {
+                const confetti = document.createElement('div');
+                confetti.style.position = 'fixed';
+                confetti.style.width = '10px';
+                confetti.style.height = '10px';
+                confetti.style.background = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.borderRadius = '50%';
+                confetti.style.top = '0';
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.opacity = '0.7';
+                confetti.style.zIndex = '9999';
+                confetti.style.pointerEvents = 'none';
+                
+                document.body.appendChild(confetti);
+                
+                // Animation
+                const animation = confetti.animate([
+                    { transform: 'translateY(0) rotate(0deg)', opacity: 0.7 },
+                    { transform: `translateY(${window.innerHeight}px) rotate(${Math.random() * 360}deg)`, opacity: 0 }
+                ], {
+                    duration: 1000 + Math.random() * 2000,
+                    easing: 'cubic-bezier(0.215, 0.61, 0.355, 1)'
+                });
+                
+                animation.onfinish = () => {
+                    document.body.removeChild(confetti);
+                };
+            }
+        }
+
+        // Add dynamic background particles
+        function initParticles() {
+            const particlesContainer = document.createElement('div');
+            particlesContainer.id = 'particles';
+            particlesContainer.style.position = 'fixed';
+            particlesContainer.style.top = '0';
+            particlesContainer.style.left = '0';
+            particlesContainer.style.width = '100%';
+            particlesContainer.style.height = '100%';
+            particlesContainer.style.pointerEvents = 'none';
+            particlesContainer.style.zIndex = '-1';
+            
+            document.body.appendChild(particlesContainer);
+            
+            const particleCount = 50;
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.style.position = 'absolute';
+                particle.style.width = Math.random() * 5 + 2 + 'px';
+                particle.style.height = particle.style.width;
+                particle.style.background = `rgba(15, 81, 50, ${Math.random() * 0.1})`;
+                particle.style.borderRadius = '50%';
+                particle.style.top = Math.random() * 100 + 'vh';
+                particle.style.left = Math.random() * 100 + 'vw';
+                
+                particlesContainer.appendChild(particle);
+                
+                // Animate particle
+                animateParticle(particle);
+            }
+        }
+
+        function animateParticle(particle) {
+            let x = Math.random() * 100;
+            let y = Math.random() * 100;
+            let xSpeed = (Math.random() - 0.5) * 0.2;
+            let ySpeed = (Math.random() - 0.5) * 0.2;
+            
+            function move() {
+                x += xSpeed;
+                y += ySpeed;
+                
+                // Bounce off edges
+                if (x <= 0 || x >= 100) xSpeed *= -1;
+                if (y <= 0 || y >= 100) ySpeed *= -1;
+                
+                particle.style.left = x + 'vw';
+                particle.style.top = y + 'vh';
+                
+                requestAnimationFrame(move);
+            }
+            
+            move();
+        }
+
+        // ============================================
+        // PAGE INITIALIZATION
+        // ============================================
+
+        // Start loading screen
+        document.addEventListener('DOMContentLoaded', () => {
+            // Add CSS for shake animation
+            const style = document.createElement('style');
+            style.textContent = `
+                @keyframes shake {
+                    0%, 100% { transform: translateX(0); }
+                    10%, 30%, 50%, 70%, 90% { transform: translateX(-5px); }
+                    20%, 40%, 60%, 80% { transform: translateX(5px); }
+                }
+                
+                #ripple {
+                    position: fixed;
+                    background: rgba(214, 162, 75, 0.3);
+                    border-radius: 50%;
+                    transform: scale(0);
+                    pointer-events: none;
+                    z-index: 9999;
+                }
+            `;
+            document.head.appendChild(style);
+            
+            // Add ripple element
+            const ripple = document.createElement('div');
+            ripple.id = 'ripple';
+            document.body.appendChild(ripple);
+            
+            // Start loading screen
+            initLoadingScreen();
+            
+            // Initialize typing effect
+            initTypingEffect();
+            
+            // Initialize parallax effect
+            initParallaxEffect();
+            
+            // Initialize particles
+            initParticles();
+            
+            // Create confetti on form submission
+            document.getElementById('questionForm')?.addEventListener('submit', () => {
+                setTimeout(createConfetti, 500);
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
